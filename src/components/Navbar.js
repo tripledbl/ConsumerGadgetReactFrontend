@@ -8,6 +8,10 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 
 function Navbar() {
+  // These variables are created and grabbed from Auth0. They will let us know the boolean value of isLoading,
+  // and a custom field for user (for simplicity, we will just assume the user exists or doesn't exist after login)
+  const {isLoading, user} = useAuth0();
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
