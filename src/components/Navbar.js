@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
+import  { LoginButton } from './LoginButton';
+import { LogoutButton } from './LogoutButton';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { useAuth0 } from '@auth0/auth0-react';
+
+
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -37,11 +41,27 @@ function Navbar() {
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              <Link
+                  // Home page will always be shown, whether user is logged in or not
+                  to='/'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+              >
                 Home
               </Link>
             </li>
             <li className='nav-item'>
+              <Link
+                to='/about'
+                className='nav-links'
+                onClick={closeMobileMenu}
+                >
+                About
+              </Link>
+            </li>
+            { !isLoading && user && (
+                // This check is if user is logged in, then the Models tab will show, otherwise it will not
+                <li className='nav-item'>
               <Link
                 to='/models'
                 className='nav-links'
@@ -50,17 +70,16 @@ function Navbar() {
                 Models
               </Link>
             </li>
-            <li>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
+            )}
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+          { !isLoading && !user && (
+              // If the user is not logged in and page is not loading, then LoginButton script will be ran
+              button && <LoginButton buttonStyle='btn--outline'>LOGIN | SIGN UP</LoginButton>
+          )}
+          { !isLoading && user && (
+              // If the user is logged in and page is not loading, then LogoutButton script will be ran
+              button && <LogoutButton buttonStyle='btn--outline'>LOGOUT</LogoutButton>
+          )}
         </div>
       </nav>
     </>
