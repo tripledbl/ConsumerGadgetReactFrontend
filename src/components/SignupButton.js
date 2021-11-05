@@ -6,11 +6,11 @@ import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import './Button.css';
 
-const STYLES = ['btn--primary', 'btn--outline'];
+const STYLES = ['btn--primary'];
 
 const SIZES = ['btn--medium', 'btn--large'];
 
-export const LoginButton = ({
+export const SignupButton = ({
   children,
   type,
   buttonStyle,
@@ -30,7 +30,11 @@ export const LoginButton = ({
         // previously onClick={onClick}, which would route you to a different extension path, which was located in
         // App.js line 18. This is removed, as user does not need to go to our page, and then get redirected. User
         // should be directly redirected to Auth0
-        onClick={() => loginWithRedirect()}
+        onClick={() => loginWithRedirect(
+            {
+              screen_hint: 'signup'
+            }
+        )}
         type={type}
       >
         {children}

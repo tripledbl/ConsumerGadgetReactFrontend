@@ -30,7 +30,11 @@ export const LoginButton = ({
         // previously onClick={onClick}, which would route you to a different extension path, which was located in
         // App.js line 18. This is removed, as user does not need to go to our page, and then get redirected. User
         // should be directly redirected to Auth0
-        onClick={() => loginWithRedirect()}
+        onClick={() => loginWithRedirect(
+            {
+              redirectUri: 'http://localhost:3000/models'
+            }
+        )}
         type={type}
       >
         {children}

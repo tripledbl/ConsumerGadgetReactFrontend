@@ -8,8 +8,7 @@ import Products from './components/pages/Products';
 import About from './components/pages/About';
 
 function App() {
-  return (
-
+    return (
       <Router>
         <Navbar />
         <Switch>
