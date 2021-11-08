@@ -1,16 +1,12 @@
-// import React from 'react';
-// import './LoginButton.css';
-// import { Link } from 'react-router-dom';
-
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import './Button.css';
 
-const STYLES = ['btn--primary', 'btn--outline'];
+const STYLES = ['btn--primary'];
 
 const SIZES = ['btn--medium', 'btn--large'];
 
-export const LoginButton = ({
+export const SignupButton = ({
   children,
   type,
   buttonStyle,
@@ -32,7 +28,7 @@ export const LoginButton = ({
         // should be directly redirected to Auth0
         onClick={() => loginWithRedirect(
             {
-              redirectUri: 'http://localhost:3000/models'
+              screen_hint: 'signup'
             }
         )}
         type={type}

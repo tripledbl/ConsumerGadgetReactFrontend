@@ -4,6 +4,7 @@ import { LogoutButton } from './LogoutButton';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { useAuth0 } from '@auth0/auth0-react';
+import {SignupButton} from "./SignupButton";
 
 
 
@@ -78,7 +79,11 @@ function Navbar() {
           </ul>
           { !isLoading && !user && (
               // If the user is not logged in and page is not loading, then LoginButton script will be ran
-              button && <LoginButton buttonStyle='btn--outline'>LOGIN | SIGN UP</LoginButton>
+              button && <LoginButton buttonStyle='btn--outline'>LOGIN</LoginButton>
+          )}
+          { !isLoading && !user && (
+              // Sign-up button
+              button && <SignupButton buttonStyle='btn--outline'>SIGN UP</SignupButton>
           )}
           { !isLoading && user && (
               // If the user is logged in and page is not loading, then LogoutButton script will be ran
