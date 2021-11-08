@@ -32,7 +32,7 @@ export const LoginButton = ({
         // should be directly redirected to Auth0
         onClick={() => loginWithRedirect(
             {
-              redirectUri: 'http://localhost:3000/models'
+              redirectUri: 'https://predictant.herokuapp.com/models'
             }
         )}
         type={type}
