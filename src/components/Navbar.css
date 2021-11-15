@@ -27,6 +27,8 @@
   font-size: 2rem;
   display: flex;
   align-items: center;
+  height: 100px;
+  width: 100px;
 }
 
 .fa-typo3 {
