@@ -1,7 +1,3 @@
-// import React from 'react';
-// import './LoginButton.css';
-// import { Link } from 'react-router-dom';
-
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import './Button.css';
@@ -9,6 +5,8 @@ import './Button.css';
 const STYLES = ['btn--primary', 'btn--outline'];
 
 const SIZES = ['btn--medium', 'btn--large'];
+
+const MODEL_PAGE_URL = 'https://predictant.herokuapp.com/models'
 
 export const LoginButton = ({
   children,
@@ -32,7 +30,7 @@ export const LoginButton = ({
         // should be directly redirected to Auth0
         onClick={() => loginWithRedirect(
             {
-              redirectUri: 'https://predictant.herokuapp.com/models'
+              redirectUri: MODEL_PAGE_URL
             }
         )}
         type={type}

@@ -4,7 +4,8 @@ import { LogoutButton } from './LogoutButton';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { useAuth0 } from '@auth0/auth0-react';
-import {SignupButton} from "./SignupButton";
+import {SignupButton} from './SignupButton';
+import Logo from "../assets/logo512.png"
 
 
 
@@ -38,8 +39,9 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            Predictant
-            <i class='fab fa-typo3' />
+            <img src={Logo}
+              alt="" 
+              style={{ resizeMode:'stretch', height: 58, width: 120 }}/>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
