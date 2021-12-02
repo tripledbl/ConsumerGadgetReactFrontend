@@ -41,7 +41,7 @@ function Navbar() {
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             <img src={Logo}
               alt="" 
-              style={{ resizeMode:'stretch', height: 50, width: 55 }}/>
+              style={{ resizeMode:'stretch', height: 58, width: 120 }}/>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
