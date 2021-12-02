@@ -2,7 +2,7 @@
   background: linear-gradient(90deg, rgb(103, 58, 183) 0%, rgb(26, 23, 23) 30%);
   height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   font-size: 1.2rem;
   position: sticky;
@@ -21,7 +21,7 @@
 .navbar-logo {
   color: #fff;
   justify-self: start;
-  margin-left: 20px;
+  margin-left: 100px;
   margin-right: 100px;
   cursor: pointer;
   text-decoration: none;
