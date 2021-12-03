@@ -7,10 +7,9 @@ export default class Calendar extends React.Component {
     render(){
         return(
             <FullCalendar  
-
-            defaultView="dayGridMonth" 
-            plugins={[ dayGridPlugin ]}
-            events={[ {title: 'event 1', date: '2021-11-11'}]}
+                defaultView="dayGridMonth" 
+                plugins={[ dayGridPlugin ]}
+                events={[ {title: 'event 1', date: '2021-11-11'}]}
             /> 
         )
     }
