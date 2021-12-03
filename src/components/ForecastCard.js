@@ -4,7 +4,7 @@ import './ForecastCard.css'
 
 function ForecastCard(props) {
   return (
-    <Link className='cards__item__link'>
+    <Link className='cards__item__link' to={props.path}>
         <div className='forecast__name'>{props.name}</div>
         <div className='details'>
             <div className='detail'>Accuracy: {props.accuracy}</div>
