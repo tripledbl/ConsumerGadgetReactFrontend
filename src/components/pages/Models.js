@@ -1,6 +1,12 @@
 import React from 'react';
 import '../../App.css';
+import ForecastCards from '../ForecastCards'
 
 export default function Services() {
-  return <h1 className='services'>Models</h1>;
+  return (
+    <div className='background'>
+      <ForecastCards>
+      </ForecastCards>
+    </div>
+  );
 }

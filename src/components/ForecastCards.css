@@ -1,0 +1,21 @@
+.cards {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cards__container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.title {
+    margin-left: 40px;
+    font-size: 30pt;
+}

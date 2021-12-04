@@ -69,14 +69,14 @@ function Navbar() {
             { !isLoading && user && (
                 // This check is if user is logged in, then the Models tab will show, otherwise it will not
                 <li className='nav-item'>
-              <Link
-                to='/models'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Models
-              </Link>
-            </li>
+                  <Link
+                    to='/models'
+                    className='nav-links'
+                    onClick={closeMobileMenu}
+                  >
+                    Forecasts
+                  </Link>
+                </li>
             )}
           </ul>
           { !isLoading && !user && (

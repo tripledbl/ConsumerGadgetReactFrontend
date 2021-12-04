@@ -1,0 +1,32 @@
+.cards__item__link {
+    display: flex;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);  
+    border-radius: 10px;
+    overflow: hidden; 
+    text-decoration: none;
+    padding: 30px;
+    margin: 10px;
+    flex-direction: column;
+    background-color: white;
+}
+
+.cards__items {
+    margin-bottom: 24px;
+}
+
+.forecast__name {
+    margin-right: 10px;
+    font-size: 20pt;
+    color: rgb(103, 58, 183);
+}
+
+.details {
+    display: flex;
+    margin-top: 10px;
+}
+
+.detail {
+    margin-right: 20px;
+    color: black;
+}
