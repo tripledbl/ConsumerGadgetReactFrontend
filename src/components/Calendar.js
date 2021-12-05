@@ -1,6 +1,7 @@
 import React from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import axios from 'axios';
 
 const baseURL = process.env.REACT_APP_BASE_URL
 
@@ -16,7 +17,12 @@ export default class Calendar extends React.Component {
     }
 
     Calendar() {
-        console.log('MAKING API CALL: ' + baseURL);
+        axios({
+            method: 'get',
+            url: baseURL,
+            }).then(res => {
+                console.log(res.data);
+        });
     }
 
     render(){
