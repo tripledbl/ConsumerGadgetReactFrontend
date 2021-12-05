@@ -52,25 +52,32 @@ export default class Calendar extends React.Component {
     // gives 14 days worth of customer volume predictions starting with today
     // day: a date object
     getPredictions(day) {
-        for (let i = 0; i < TWO_WEEKS; i++) {
-            if (day.getDay() === 1 || day.getDate() === 2) {
-                continue;
-            }
-            let strDay = this.formatDate(day)
-            axios({
-                method: 'GET',
-                url: baseURL + '/user/' + crabtreeId + "/prediction/" + strDay,
-                headers: {'Authorization': 'Bearer ' + users_token },
-            }).then(res => {
-                let obj = {
-                    title: 'prediction: ' + Math.round(res.data['prediction']),
-                    date: strDay
+        let fromDate = new Date();
+        let toDate = new Date();
+        toDate.setDate(toDate.getDate() + 13);
+        fromDate = this.formatDate(fromDate);
+        toDate = this.formatDate(toDate);
+        axios({
+            method: 'GET',
+            url: baseURL + '/user/' + crabtreeId + '/prediction/' + fromDate + '/' + toDate,
+            headers: {'Authorization': 'Bearer ' + users_token },
+        }).then(res => {
+            let predictionOrders = [];
+            for (const date in res.data) {
+                let dateObj = new Date(date);
+                if (dateObj.getDay() === 0 || dateObj.getDay() === 1) {
+                    continue;
                 }
-                let joined = this.state.predictionOrders.concat(obj);
-                this.setState({ predictionOrders: joined });
-            })
-            day.setDate(day.getDate() + 1)
-        }
+                let obj = {
+                    title: 'prediction: ' + Math.round(res.data[date]),
+                    date: date,
+                    color: "rgb(103, 58, 183)"
+                }
+                predictionOrders.push(obj);
+            }
+            this.setState({ predictionOrders: predictionOrders });
+        })
+        day.setDate(day.getDate() + 1)
     }
 
     getOrders(today) {
