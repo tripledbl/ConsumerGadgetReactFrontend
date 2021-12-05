@@ -6,7 +6,7 @@ const STYLES = ['btn--primary', 'btn--outline'];
 
 const SIZES = ['btn--medium', 'btn--large'];
 
-const MODEL_PAGE_URL = 'https://predictant.herokuapp.com/models'
+const MODEL_PAGE_URL = 'http://localhost:3000/models'
 
 export const LoginButton = ({
   children,
