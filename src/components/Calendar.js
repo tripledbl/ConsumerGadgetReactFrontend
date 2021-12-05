@@ -2,9 +2,11 @@ import React from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import axios from 'axios';
+import {tokenError} from "@auth0/auth0-react/dist/utils";
 
 const baseURL = process.env.REACT_APP_BASE_URL
 const token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFWcEdtZXZ0VDVvSE1uVC01d0oyMSJ9.eyJpc3MiOiJodHRwczovL3ByZWRpY3RhbnQudXMuYXV0aDAuY29tLyIsInN1YiI6IjlWdlh3ZnBOZDlTRWkyZ1l0OEVCRXhqY1k3blJWYmxaQGNsaWVudHMiLCJhdWQiOiJodHRwczovL3ByZWRpY3RhbnQtYmFja2VuZC5oZXJva3VhcHAuY29tL29yZGVycyIsImlhdCI6MTYzODY2NTMxMiwiZXhwIjoxNjM4NzUxNzEyLCJhenAiOiI5VnZYd2ZwTmQ5U0VpMmdZdDhFQkV4amNZN25SVmJsWiIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.kjETxJwxeP81jKIfjyXkMoVFEaMzf8tjSX48Z4hBh18kELRnhKabYCzdANGGeKzSDbrTzNjw9umfSLgIrs4Ss6ZVNzUZsCnNaMVcVDIxX-cHqvVgu_ODktB3Fa01lm5GY7V99x0G8H6pFk_QqhsBcFq1zns34Rf2cYFyizC2JPFe_ZGcBJJJyhgzKUrwlvlH_VjIBgM48M5hSQqPXcs11q-Xds20WR2wFDErzRjJP4E7pD-DAlLeJQYuWFnNH4wYHArW5QX1Z1VnO4XnHCqw_sWCdOA-Y7PeKmWtcEx20wMG6Eqm24LfIwuY1FBPB428pWynxGDjWG9EMjsDSd_hhg'
+const crabtreeId = process.env.CRABTREE_USER_ID
 
 export default class Calendar extends React.Component {
 
@@ -17,7 +19,7 @@ export default class Calendar extends React.Component {
         this.calendar()
     }
 
-    calendar() {
+    getTodaysDate() {
         // get today's date
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
@@ -26,8 +28,28 @@ export default class Calendar extends React.Component {
 
         today = yyyy + '-' + mm + '-' + dd;
 
+        return today
+    }
+
+    calendar() {
+        let today = this.getTodaysDate();
+
         this.getOrders(today);
     }
+
+    // getPredictions(userId) {
+    //     axios({
+    //         method: 'GET',
+    //         url: baseURL + '/user/' + crabtreeId + '/prediction',
+    //         headers: {
+    //             'Authorization': 'Bearer ' + token
+    //         },
+    //         body: JSON.stringify({ date:  })
+    //
+    //     }).then(dates => {
+    //         let
+    //     })
+    // }
 
     getOrders(today) {
         axios({
