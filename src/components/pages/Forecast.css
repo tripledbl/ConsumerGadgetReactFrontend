@@ -4,6 +4,26 @@
     margin-left: 8%;
 }
 
+.info-container {
+    display: inline-block;
+    margin-left: 8%;
+}
+
+.order-text {
+    display: inline-block;
+    color: purple;
+}
+
+.error-text {
+    display: inline-block;
+    color: purple;
+}
+
+.historical-order-data-text {
+    display: inline-block;
+    color: purple;
+}
+
 .tab-name {
     padding-left: 10px;
     padding-right: 10px;
