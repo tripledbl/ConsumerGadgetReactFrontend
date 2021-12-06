@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Models from './components/pages/Models';
 import Products from './components/pages/Products';
 import About from './components/pages/About';
-import Forecast from './components/pages/Forecast'
+import Forecast from './components/pages/Forecast';
+import ForecastDetail from './components/ForecastDetail';
 
 function App() {
     return (
@@ -17,7 +18,7 @@ function App() {
           <Route path='/models' component={Models} />
           <Route path='/products' component={Products} />
           <Route path='/forecast' component={Forecast} />
-          <Route path='/about' component={About} />
+          <Route path='/about' component={ForecastDetail} />
         </Switch>
       </Router>
   );

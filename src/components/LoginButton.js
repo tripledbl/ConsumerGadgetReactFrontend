@@ -6,7 +6,7 @@ const STYLES = ['btn--primary', 'btn--outline'];
 
 const SIZES = ['btn--medium', 'btn--large'];
 
-const MODEL_PAGE_URL = 'https://predictant.herokuapp.com/models'
+const MODEL_PAGE_URL = 'http://localhost:3000/models'; //https://predictant.herokuapp.com/models'
 
 export const LoginButton = ({
   children,
@@ -30,7 +30,7 @@ export const LoginButton = ({
         // should be directly redirected to Auth0
         onClick={() => loginWithRedirect(
             {
-              redirectUri: MODEL_PAGE_URL
+              redirectUri: MODEL_PAGE_URL 
             }
         )}
         type={type}

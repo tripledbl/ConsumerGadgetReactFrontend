@@ -29,12 +29,12 @@ export default() => (
         
         
         <TabPanel className='react-tabs__tab-panel'>
-            <h2> Content Trends  </h2>
+            <h2> Trends Content </h2>
         </TabPanel>
 
         
         <TabPanel className='react-tabs__tab-panel'>
-            <h2> Content Forecast Info</h2>
+            <h2> Forecast Info Conent </h2>
         </TabPanel>
 
     </Tabs>
