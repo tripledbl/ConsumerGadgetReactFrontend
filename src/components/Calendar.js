@@ -53,7 +53,7 @@ export default class Calendar extends React.Component {
     getPredictions(day) {
         let fromDate = new Date();
         let toDate = new Date();
-        toDate.setDate(toDate.getDate() + 13);
+        toDate.setDate(toDate.getDate() + 20);
         fromDate = this.formatDate(fromDate);
         toDate = this.formatDate(toDate);
         axios({
