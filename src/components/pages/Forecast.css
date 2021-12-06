@@ -7,16 +7,19 @@
 .info-container {
     display: inline-block;
     margin-left: 8%;
+    line-height: 1.5;
 }
 
 .order-text {
     display: inline-block;
     color: purple;
+    line-height: 1.5;
 }
 
 .error-text {
     display: inline-block;
     color: purple;
+    line-height: 1.5;
 }
 
 .historical-order-data-text {
