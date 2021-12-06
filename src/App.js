@@ -5,7 +5,6 @@ import Home from './components/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Models from './components/pages/Models';
 import Products from './components/pages/Products';
-import About from './components/pages/About';
 import Forecast from './components/pages/Forecast'
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
           <Route path='/models' component={Models} />
           <Route path='/products' component={Products} />
           <Route path='/forecast' component={Forecast} />
-          <Route path='/about' component={About} />
         </Switch>
       </Router>
   );
