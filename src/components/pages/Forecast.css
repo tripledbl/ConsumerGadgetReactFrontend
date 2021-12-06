@@ -66,3 +66,13 @@
 .react-tabs__tab-panel--selected {
     display: block;
 }
+
+.trends-container {
+    padding: 3rem;
+    margin-left: 5%;
+}
+
+.info-container {
+    padding: 3rem;
+    margin-left: 5%;
+}
